@@ -135,7 +135,7 @@ public class CustomLinkedList<T> implements CustomList<T> {
             node = node.next;
         }
 */
-        while (true) { // но! не заходит последнее значение
+        while (true) {
             sb.append(node.value);
             sb.append(" "); // магия
             node = node.next;
