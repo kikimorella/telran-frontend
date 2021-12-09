@@ -6,6 +6,7 @@ import java.util.Random;
 // inclusive and max exclusive
 public class MaxRandomRule implements IRandomRule{
 
+    private final Random ran = new Random();
     private final int max;
 
     public MaxRandomRule(int max) {
@@ -14,7 +15,7 @@ public class MaxRandomRule implements IRandomRule{
 
     @Override
     public int nextInt() {
-        Random ran = new Random();
+        // Random ran = new Random(); // так не эффективно, лучше перевести в private final Random ran = new Random();
 
         return ran.nextInt(max); // nextInt(bound) - от 0 до указанного значения;
     }

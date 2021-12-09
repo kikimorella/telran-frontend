@@ -1,4 +1,4 @@
-package de.telran.d211115.list.list; //TODO generify this
+package de.telran.d211115.list.list; // generify this
 // Название интерфейса пишут в конце
 public class AdvancedArrayList<T> implements CustomList<T> {
     // Чтобы класс применил интерфейс, надо использовать ключевое слово implements
@@ -75,9 +75,9 @@ private T[] source;
 
     @Override
     public void add(T value) { // самый часто используемый метод
-        insert(source.length, value); // количество операций эквивалентно длинне массива
+        insert(source.length, value); // количество операций эквивалентно длине массива
     }
-/*
+
     @Override
     public void println() {
         for (int i = 0; i < source.length; i++) {
@@ -85,5 +85,14 @@ private T[] source;
         }
         System.out.println();
     }
- */
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < source.length; i++) {
+            sb.append(source[i]);
+        }
+        return sb.toString();
+    }
 }

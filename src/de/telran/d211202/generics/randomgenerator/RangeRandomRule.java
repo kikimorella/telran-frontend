@@ -8,6 +8,7 @@ public class RangeRandomRule implements IRandomRule{
 
     private final int min;
     private final int max;
+    private final Random ran = new Random();
 
     public RangeRandomRule(int min, int max) {
         this.min = min;
@@ -17,10 +18,17 @@ public class RangeRandomRule implements IRandomRule{
     @Override
     public int nextInt() {
         int res = 0;
-        Random ran = new Random();
+        // Random ran = new Random();
         int range = max - min;
         res = min + ran.nextInt(range);
         // любое случайное число от 0 до разницы максимума и минимума, и 0 мы двигаем на значение минимума
         return res;
+
+        /*
+        public int nextInt() {
+            int range = max - min;
+            return min + ran.nextInt(range);
+            }
+         */
     }
 }

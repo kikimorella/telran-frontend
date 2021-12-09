@@ -14,11 +14,11 @@ public class RandomGenerator {
 
     public List<Integer> generateNumbers(int number) {
         //compose a list of "number" random numbers using "randomRule" and return
-        ArrayList<Integer> list = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
         Random ran = new Random();
-        for (int i = 0; i < number; i++)
-        {
-            list.add(ran.nextInt(number));
+        for (int i = 0; i < number; i++) {
+            int randomNumber = randomRule.nextInt();
+            list.add(randomNumber);
         }
         return list;
     }

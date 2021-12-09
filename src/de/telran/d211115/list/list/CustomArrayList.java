@@ -9,15 +9,15 @@ public class CustomArrayList<T> implements CustomList<T> { // CustomArrayList<T>
     private static final int INITIAL_CAPACITY = 8;
 
     public CustomArrayList() { // объект, инициализируем поля, как массив, состоящий из INITIL_CAPACITY элементов
-        // source = new int[INITIAL_CAPACITY];
-        source = (T[]) new Object[INITIAL_CAPACITY];// массив типа Т
+        // source = new int[INITIAL_CAPACITY]; // T obj = new T; не всегда возможен, т.к. методы Т приватные
+        source = (T[]) new Object[INITIAL_CAPACITY];// массив типа Т, (T[]) - кастинг
     }
 
     @Override
     public void set(int index, T value) { 
-        //    if (index >= 0 && index < size)
+        //    if (index >= 0 || index < size)
         //        source[index] = value;
-        if (index < 0 && index >= size)
+        if (index < 0 || index >= size)
             throw new CustomOutOfBoundsException();
 
         source[index] = value;
@@ -38,14 +38,14 @@ public class CustomArrayList<T> implements CustomList<T> { // CustomArrayList<T>
     @Override
     public boolean contains(T value) {
         for (int i = 0; i < size; i++) {
-            if (source[i].equals(value)) // if (source[i] == value)
+            if (source[i].equals(value)) // if (source[i] == value) исключение значение null
                 return true;
         }
         return false;
     }
 
     @Override // убрать значение по индексу
-    public void removeById(int index) {
+    public void removeById(int index) { // метод делает не то, что нужно. должно {10 5 -5 50 99}, а у нас {10 18 3 3 3}
         if (index < 0 || index >= size)
             throw new CustomOutOfBoundsException();
         for (int i = index + 1; i < size; i++) {
@@ -88,13 +88,22 @@ public class CustomArrayList<T> implements CustomList<T> { // CustomArrayList<T>
         source[index] = value;
         size++;
     }
-/*
-    @Override
+
+    @Override // использовать StringBuilder
     public void println() {
         for (int i = 0; i < size; i++) {
             System.out.print(source[i] + " ");
         }
         System.out.println();
     }
- */
+
+    @Override
+    public String toString() {
+        StringBuffer sb = new StringBuffer();
+
+        for (int i = 0; i < size; i++) {
+            sb.append(source[i]); //Метод append() добавляет подстроку в конец StringBuffer
+        }
+        return sb.toString();
+    }
 }

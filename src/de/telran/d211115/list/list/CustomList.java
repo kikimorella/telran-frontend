@@ -15,7 +15,7 @@ package de.telran.d211115.list.list;
 /**
  * The insterface describes a data structure called List. It is a ordered data structure.
  */
-// public interface CustomList {
+// public interface CustomList // override toString for all inherited classes
 public interface CustomList<T> { // все методы в interface - public. Важно - описание чем мы будем пользоваться
     // Описания должны быть! Подробными! Тот, кто будет читать должен понял. (добавляем /** перед public)
 
@@ -26,7 +26,7 @@ public interface CustomList<T> { // все методы в interface - public. �
      * @param value a new value for the index position
      * @throws CustomOutOfBoundsException if index < 0 or >= size
      */
-    public void set(int index, T value);
+    public void set(int index, T value); // устанавливает элемент по индексу
 
     /**
      * The method gets the value on the index position
@@ -35,18 +35,18 @@ public interface CustomList<T> { // все методы в interface - public. �
      * @return the value by its position
      * @throws CustomOutOfBoundsException if index < 0 or >= size
      */
-    public T get(int index);
+    public T get(int index); // достаёт элемент по индексу
 
     /**
      * @return The number of elements in the list
      */
-    public int size();
+    public int size(); // возвращает длину
 
     /**
      * @param value to be found
      * @return whether the value is in the list
      */
-    public boolean contains(T value);
+    public boolean contains(T value); // содержит ли тот или иной элемент
 
     /**
      * removes the value by its position. The elements which are after the index move to the left by 1 position
@@ -54,14 +54,14 @@ public interface CustomList<T> { // все методы в interface - public. �
      * @param index of the value to remove
      * @throws CustomOutOfBoundsException if index < 0 or >= size
      */
-    public void removeById(int index);
+    public void removeById(int index); // вырезать элемент по индексу
 
     /**
      * Add an element to the end of the list
      *
      * @param value to append
      */
-    public void add(T value);
+    public void add(T value); // добавить в конец элемент
 
     /**
      * Inserts the value to the index place. All the elements which are after the index move to the right by 1 position
@@ -70,11 +70,11 @@ public interface CustomList<T> { // все методы в interface - public. �
      * @param value the element to insert
      * @throws CustomOutOfBoundsException if index < 0 or > size
      */
-    public void insert(int index, T value);
+    public void insert(int index, T value); // засунуть дополнительный элемент по индексу
 
-//    /**
-//     * prints the element out to the console (one by one)
-//     */
-//    public void println(); // теперь он нам не нужен. мы освоили toString
-//
+    /**
+     * prints the element out to the console (one by one)
+     */
+    public void println();
+
 }
