@@ -52,9 +52,19 @@ public interface CustomList<T> { // все методы в interface - public. �
      * removes the value by its position. The elements which are after the index move to the left by 1 position
      *
      * @param index of the value to remove
+     * @return the value being removed
      * @throws CustomOutOfBoundsException if index < 0 or >= size
      */
-    public void removeById(int index); // вырезать элемент по индексу
+    public T removeById(int index); // (был void) вырезать элемент по индексу и вернуть его значение
+
+    /**
+     * removes the element by its value. Only one element will be removed if exists
+     *
+     * @param value of the element to remove
+     * @return true if element exists and removed, false otherwise
+     * @throws CustomOutOfBoundsException if index < 0 or >= size
+     */
+    public boolean removeByValue (T value); // вырезать элемент по значению. {10, 15, 10, 7} -> {15, 10, 7}
 
     /**
      * Add an element to the end of the list

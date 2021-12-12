@@ -45,13 +45,26 @@ public class CustomArrayList<T> implements CustomList<T> { // CustomArrayList<T>
     }
 
     @Override // убрать значение по индексу
-    public void removeById(int index) { // метод делает не то, что нужно. должно {10 5 -5 50 99}, а у нас {10 18 3 3 3}
+    public T removeById(int index) { // метод делает не то, что нужно. должно {10 5 -5 50 99}, у нас {10 18 3 3 3}
         if (index < 0 || index >= size)
             throw new CustomOutOfBoundsException();
+
+        T removedElt = source[index];
         for (int i = index + 1; i < size; i++) {
             source[i] = source[i - 1];
         }
         size--;
+        return removedElt;
+    }
+
+    @Override
+    public boolean removeByValue(T value) {
+        for (int i = 0; i < source.length; i++) {
+            source[i].equals(value);
+            removeById(i);
+            return true;
+        }
+        return false;
     }
 
     @Override

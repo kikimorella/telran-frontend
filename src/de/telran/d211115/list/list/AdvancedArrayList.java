@@ -4,12 +4,13 @@ public class AdvancedArrayList<T> implements CustomList<T> {
     // Чтобы класс применил интерфейс, надо использовать ключевое слово implements
     // это реализация интерфейса!!!
     // Generate -> implement Methods
-private T[] source;
+    private T[] source;
 
     public AdvancedArrayList(int initialSize) {
         //source = new int[initialSize];
-        source = (T[]) new Object [initialSize];                                                                         //          ?
+        source = (T[]) new Object[initialSize];
     }
+
     // ссылки могут быть вида интерфейс, а объекты - нет
     // все интерфейсы (абстрактные методы) должны быть реализованы в реальном классе, т.е. надо учитывать, что если
     // класс применяет интерфейс, то он должен реализовать все методы интерфейса. Если класс не реализует какие-то
@@ -17,11 +18,17 @@ private T[] source;
     // затем должны будут реализовать эти методы.
     @Override
     public void set(int index, T value) {
+        if (index < 0 || index >= source.length)
+            throw new CustomOutOfBoundsException();
+
         source[index] = value;
     }
 
     @Override
     public T get(int index) {
+        if (index < 0 || index >= source.length)
+            throw new CustomOutOfBoundsException();
+
         return source[index];
     }
 
@@ -32,8 +39,11 @@ private T[] source;
 
     @Override
     public void insert(int index, T elt) {
+        if (index < 0 || index > source.length)
+            throw new CustomOutOfBoundsException();
+
         //int[] newSource = new int[source.length + 1];
-        T[] newSource = (T[]) new Object [source.length + 1];                                                             // !
+        T[] newSource = (T[]) new Object[source.length + 1];
 
         for (int i = 0; i < index; i++) {
             newSource[i] = source[i];
@@ -57,11 +67,15 @@ private T[] source;
         return false;
     }
 
-    @Override
-    public void removeById(int index) {
-        //int[] newSource = new int[source.length - 1];
-        T[] newSource = (T[]) new Object [source.length - 1];                                                            // !
+    @Override // public void removeById(int index) {
+    public T removeById(int index) {
+        if (index < 0 || index >= source.length)
+            throw new CustomOutOfBoundsException();
 
+        //int[] newSource = new int[source.length - 1];
+        T[] newSource = (T[]) new Object[source.length - 1];
+
+        T removedElt = source[index]; // запоминаем элемент
         for (int i = 0; i < index; i++) {
             newSource[i] = source[i];
         }
@@ -71,6 +85,17 @@ private T[] source;
         }
 
         source = newSource;
+        return removedElt;
+    }
+
+    @Override
+    public boolean removeByValue(T value) {
+        for (int i = 0; i < source.length; i++) {
+            if (source[i].equals(value))
+                removeById(i);
+            return true;
+        }
+        return false;
     }
 
     @Override

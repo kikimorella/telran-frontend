@@ -22,9 +22,7 @@ public class CustomLinkedList<T> implements CustomList<T> {
     @Override
     public void set(int index, T value) {
         Node<T> node = getNodeByIndex(index);
-        Node<T> newNode = new Node<T>(value, node.prev, node.next);
-
-        node = newNode;
+        node.value = value;
     }
 
     @Override
@@ -51,6 +49,7 @@ public class CustomLinkedList<T> implements CustomList<T> {
 
     @Override
     public boolean contains(T value) {
+/*
         Node<T> node = new Node<T>(value, null, first);
 
         while (node != null) {// проверяем до последнего
@@ -60,15 +59,19 @@ public class CustomLinkedList<T> implements CustomList<T> {
             node = node.next;
         }
         return false;
+ */
+        Node<T> node = findNodeByValue(value);
+        return node != null;
     }
 
     @Override
-    public void removeById(int index) {
+    public T removeById(int index) {
         // В отличие от удаления в ArrayList здесь нет никаких сдвигов элементов массива. Мы просто переопределяем
         // ссылки у элементов. Теперь они указывают друг на друга, а объект между “выпал” из этой цепочки ссылок,
         // и больше не является частью списка.
-        Node<T> node2 = getNodeByIndex(index);
-
+        Node<T> nodeToRemove = getNodeByIndex(index);
+        T res = nodeToRemove.value;
+/*
         Node<T> node1 = node2.prev;
         Node<T> node3 = node2.next;
 
@@ -76,8 +79,62 @@ public class CustomLinkedList<T> implements CustomList<T> {
         node2.prev = null;
         node1.next = node3;
         node3.prev = node1;
-
+ */
+        removeNode(nodeToRemove);
         size--;
+        return res;
+    }
+
+    @Override
+    public boolean removeByValue(T value) {
+        Node<T> nodeToRemove = findNodeByValue(value);
+        if (nodeToRemove == null)
+            return false;
+
+        removeNode(nodeToRemove);
+        return true;
+    }
+
+    private void removeNode(Node<T> nodeToRemove) { // не забыть про метод findNodeByValue
+        if (first == null) //Checks if the list is empty
+            System.out.println("List is empty");
+
+        if (first == last) {//Checks whether the list contains only one Node
+            first = null;
+            last = null;
+        } else if (first == nodeToRemove) { //Checks if node is first
+            Node<T> nodeNext = first.next;
+            first.next = null;
+            nodeNext.prev = null;
+            first = nodeNext;
+        } else if (last == nodeToRemove) { //Checks if node is last
+            Node<T> nodePrev = last.prev;
+            last.prev = null;
+            nodePrev.next = null;
+            last = nodePrev;
+        } else {
+            Node<T> node1 = nodeToRemove.prev;
+            Node<T> node3 = nodeToRemove.next;
+            node3.prev = node1;
+            node1.prev = node3;
+        }
+    }
+
+    /**
+     * @param value if exits
+     * @return the first node with value or null if there is no such a node
+     */
+    // {10, 7, 10, 15} если ищем 15, то вернуть узел с этим значением
+    private Node<T> findNodeByValue(T value) {
+        Node<T> currentNode = first;
+        for (int i = 0; i < size; i++) {
+            if (currentNode.value.equals(value)) {
+                return currentNode;
+            }
+            currentNode = currentNode.next;
+        }
+
+        return null;
     }
 
     @Override
@@ -166,7 +223,7 @@ public class CustomLinkedList<T> implements CustomList<T> {
 first и last до вложений null
 Node first                    нужно пройти по цепочке                          Node last                                   new
     |                                                                              |
-T value;                                T value;                               T value;                                     T value;
-Node next; - ссылка на след.узел       <-Node next; -> ссылка на след.узел    <-Node next; -> если послед., указ.на null    null
-Node prev; - если 1 , то указ.на null  ->Node prev; -> ссылка на пред.узел    ->Node prev; -> ссылка на пред.узел           prev == last
+T value;                                T value;                               T value;                                   T value;
+Node next; - ссылка на след.узел       <-Node next; - ссылка на след.узел    <-Node next; - указ.на null                  null
+Node prev; - указ.на null              ->Node prev; - ссылка на пред.узел    ->Node prev; - ссылка на пред.узел           prev == last
 */
