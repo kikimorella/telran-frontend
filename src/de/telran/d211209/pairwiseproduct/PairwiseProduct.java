@@ -26,11 +26,28 @@ public class PairwiseProduct { // UnitTest - Alt + Enter -> Create test -> JUnit
 
     //optimize the solution by finding two max numbers from the array
     public long findMaxPairwiseProduct2(int[] array) {
-        Arrays.sort(array); //отсортировали массив
-        int lastIndex = array.length - 1;
-        long max1 = array[lastIndex];
-        long max2 = array[lastIndex - 1];
+//        Arrays.sort(array); //отсортировали массив, но это долго
+//        int lastIndex = array.length - 1;
+//        long max1 = array[lastIndex];
+//        long max2 = array[lastIndex - 1];
+        int maxIndex = 0;
 
-        return max1 * max2;
+        for (int i = 0; i < array.length; i++) {
+            if (array[maxIndex] < array[i])
+                maxIndex = i;
+        }
+
+        int max = array[maxIndex];
+        array[maxIndex] = array[0];
+        array[0] = max;
+
+        int maxNext = 0;
+
+        for (int i = 1; i < array.length; i++) {
+            if (maxNext < array[i])
+                maxNext = i;
+        }
+
+        return (long) max * maxNext;
     }
 }

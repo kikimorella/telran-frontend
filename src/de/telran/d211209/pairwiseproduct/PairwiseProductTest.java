@@ -34,11 +34,32 @@ class PairwiseProductTest {
 
     // write additional tests
     @Test
+    public void testFindMaxPairwiseProduct_threeNonZeroElements_Zero() {
+        int[] array = {5, 7, 14};
+        long res = pairwiseProduct.findMaxPairwiseProduct(array);
+        assertEquals(98, res);
+    }
+
+    @Test
+    public void testFindMaxPairwiseProduct_fourNonZeroElements_Zero() {
+        int[] array = {33, 50, 88, 101};
+        long res = pairwiseProduct.findMaxPairwiseProduct(array);
+        assertEquals(8888, res);
+    }
+
+    @Test
+    public void testFindTwoMaxNumbers_threeNonZeroElements_Zero() {
+        int[] array = {5, 7, 14};
+        long res = pairwiseProduct.findMaxPairwiseProduct(array);
+        assertEquals(98, res);
+    }
+
+    @Test
     public void testFindMaxPairwiseProduct2_mixedElements_Zero() {
-        int[] array = {40, -35, -30, 25, 20, -15, -10, 5, 0};
+        int[] array = {0, 35, 25, 5, 15, 10, 40, 20, 30};
         long res = pairwiseProduct.findMaxPairwiseProduct2(array);
 
-        assertEquals(1000, res);
+        assertEquals(1400, res);
     }
 
     @Test

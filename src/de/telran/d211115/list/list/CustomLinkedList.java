@@ -71,17 +71,7 @@ public class CustomLinkedList<T> implements CustomList<T> {
         // и больше не является частью списка.
         Node<T> nodeToRemove = getNodeByIndex(index);
         T res = nodeToRemove.value;
-/*
-        Node<T> node1 = node2.prev;
-        Node<T> node3 = node2.next;
-
-        node2.next = null;
-        node2.prev = null;
-        node1.next = node3;
-        node3.prev = node1;
- */
         removeNode(nodeToRemove);
-        size--;
         return res;
     }
 
@@ -96,28 +86,31 @@ public class CustomLinkedList<T> implements CustomList<T> {
     }
 
     private void removeNode(Node<T> nodeToRemove) { // не забыть про метод findNodeByValue
-        if (first == null) //Checks if the list is empty
-            System.out.println("List is empty");
+        Node<T> left = nodeToRemove.prev;
+        Node<T> right = nodeToRemove.next;
 
         if (first == last) {//Checks whether the list contains only one Node
             first = null;
             last = null;
-        } else if (first == nodeToRemove) { //Checks if node is first
-            Node<T> nodeNext = first.next;
-            first.next = null;
-            nodeNext.prev = null;
-            first = nodeNext;
-        } else if (last == nodeToRemove) { //Checks if node is last
-            Node<T> nodePrev = last.prev;
-            last.prev = null;
-            nodePrev.next = null;
-            last = nodePrev;
-        } else {
-            Node<T> node1 = nodeToRemove.prev;
-            Node<T> node3 = nodeToRemove.next;
-            node3.prev = node1;
-            node1.prev = node3;
         }
+
+        if (left == null) { //Checks if node is first (first == nodeToRemove)
+            first = right;
+        } else {
+            left.next = right;
+        }
+
+        if (right == null) { //Checks if node is last (last == nodeToRemove)
+            last = left;
+        } else {
+            right.prev = left;
+        }
+
+        nodeToRemove.prev = null;
+        nodeToRemove.next = null;
+        nodeToRemove.value = null;
+
+        size--;
     }
 
     /**
@@ -152,22 +145,28 @@ public class CustomLinkedList<T> implements CustomList<T> {
 
     @Override
     public void insert(int index, T value) {
-        Node<T> node2 = getNodeByIndex(index);
+        Node<T> right;
+        Node<T> left;
 
-        if (size == 0) {
-            first = node2;
-        } else if (index >= size) {
-            last.next = node2;
-            last = node2;
+        if (size == index) {
+            left = last;
+            right = null;
+        } else {
+            right = getNodeByIndex(index);
+            left = right.prev;
         }
 
-        Node<T> node1 = node2.prev;
-        Node<T> node3 = node2.next;
+        Node<T> node = new Node<>(value, right, left);
 
-        node1.next = node2;
-        node2.prev = node1;
-        node2.next = node3;
-        node3.prev = node2;
+        if (left != null)
+            left.next = node;
+        else
+            first = node;
+
+        if (right != null)
+            right.prev = node;
+        else
+            last = node;
 
         size++;
     }
