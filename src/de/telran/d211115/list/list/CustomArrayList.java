@@ -1,5 +1,7 @@
 package de.telran.d211115.list.list;
 
+import java.util.Iterator;
+
 public class CustomArrayList<T> implements CustomList<T> { // CustomArrayList<T> - Т для класса, CustomList<T>
 
     // private int[] source;
@@ -14,7 +16,7 @@ public class CustomArrayList<T> implements CustomList<T> { // CustomArrayList<T>
     }
 
     @Override
-    public void set(int index, T value) { 
+    public void set(int index, T value) {
         //    if (index >= 0 || index < size)
         //        source[index] = value;
         if (index < 0 || index >= size)
@@ -68,7 +70,7 @@ public class CustomArrayList<T> implements CustomList<T> { // CustomArrayList<T>
     }
 
     @Override
-    public void add(T value) { 
+    public void add(T value) {
 
         if (size == source.length)
             increaseCapacity();
@@ -88,7 +90,7 @@ public class CustomArrayList<T> implements CustomList<T> { // CustomArrayList<T>
     }
 
     @Override // засунуть дополнительный элемент по индексу
-    public void insert(int index, T value) { 
+    public void insert(int index, T value) {
         if (index < 0 || index > size)
             throw new CustomOutOfBoundsException();
         if (size == source.length) {
@@ -118,5 +120,28 @@ public class CustomArrayList<T> implements CustomList<T> { // CustomArrayList<T>
             sb.append(source[i]); //Метод append() добавляет подстроку в конец StringBuffer
         }
         return sb.toString();
+    }
+
+    @Override
+
+    public Iterator<T> getIterator() {
+        return new ListIterator();
+    }
+
+    public class ListIterator implements Iterator {
+
+        int currentId = 0;
+
+        @Override
+        public boolean hasNext() {
+            return currentId < size;
+        }
+
+        @Override
+        public T next() {
+            T res = source[currentId];
+            currentId++;
+            return res;
+        }
     }
 }

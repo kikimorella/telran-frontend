@@ -243,7 +243,7 @@ class CustomLinkedListTest {
         assertEquals(4, intList.size());
     }
 
-   //TODO write tests for list of strings
+   //write tests for list of strings
    @Test
    public void testAddSize_fourStrings() {
        stringList.add("If you always try your best");

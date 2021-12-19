@@ -3,6 +3,8 @@ package de.telran.d211115.list;
 import de.telran.d211108.advancedarray.AdvancedIntArray;
 import de.telran.d211115.list.list.*;
 
+import java.util.Iterator;
+
 
 public class ListMain {
 
@@ -50,6 +52,26 @@ public class ListMain {
 
         arrayList.removeById(2);
         //arrayList.println(); //{10, 5, -5, 50, 99}
+
+        // old way to iterate over a list
+        // Не эффективный способ работы с Листом. Мы не можем вне Листа переходить по его узлам.
+        // Сделано, чтоб нельзя было испортить Лист, поэтому проще сделать вложенный класс
+        for (int i = 0; i < arrayList.size(); i++) {
+            int number = arrayList.get(i);
+        }
+
+        // new way to iterate.
+        // У каждого Листа есть Iterator, и все данные, которые нужно перебрать находятся внутри
+        Iterator<Integer> iterator = arrayList.getIterator();
+        while (iterator.hasNext()) {
+            int number = iterator.next();
+        }
+        // Итератор прогнать можно только 1 раз, потом он сбрасывается на начало,
+        // если мы хотим перебрать ещё раз мы создаём новый объект итератор
+
+        // обычно вложенный класс private, а не public
+        AdvancedArrayList<Integer> aList = new AdvancedArrayList<>(0);
+        AdvancedArrayList.ListIterator iterator1 = aList.new ListIterator();
     }
 // эта ссылка CustomList list указывает, что в этом объекте есть методы, которые описаны в интерфейсе, а реализованы
 // в AdvancedArrayList. Тут нам важно, что они делают, но не важно как.

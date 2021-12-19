@@ -1,5 +1,7 @@
 package de.telran.d211115.list.list;
 
+import java.util.Iterator;
+
 public class CustomLinkedList<T> implements CustomList<T> {
 
     private Node<T> first;
@@ -202,6 +204,34 @@ public class CustomLinkedList<T> implements CustomList<T> {
         }
 
         return sb.toString();
+    }
+
+    @Override // чтоб перебрать Лист нужна только ссылка на первый узел!
+    public Iterator<T> getIterator() {
+        return new ListIterator<>(first);
+    }
+
+    private static class ListIterator<E> implements Iterator<E> {
+        // Статические классы работают как обычные классы, но поля не зависят от класса, в который вложен.
+        // Без статик все Объекты будут зависеть от объектов классов, в которые вложены(видео 16.12.21 последние 12 мин)
+
+        Node<E> current;
+
+        public ListIterator(Node<E> first) {
+            this.current = first;
+        }
+
+        @Override
+        public boolean hasNext() { // так мы определяем что Лист не пуст
+            return current != null;
+        }
+
+        @Override
+        public E next() {
+            current = current.next;
+
+            return current.value;
+        }
     }
 }
 

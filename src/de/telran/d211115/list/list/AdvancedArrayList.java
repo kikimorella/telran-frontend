@@ -1,4 +1,7 @@
 package de.telran.d211115.list.list; // generify this
+
+import java.util.Iterator;
+
 // Название интерфейса пишут в конце
 public class AdvancedArrayList<T> implements CustomList<T> {
     // Чтобы класс применил интерфейс, надо использовать ключевое слово implements
@@ -120,4 +123,71 @@ public class AdvancedArrayList<T> implements CustomList<T> {
         }
         return sb.toString();
     }
+
+    @Override
+    public Iterator<T> getIterator() {
+        return new ListIterator(); // наследование определенности <T> становится <E>. Mы перебираем source.
+    }
+/*
+    private static class ListIterator<E> implements Iterator<E> { // нужен вложенный класс т.к. нет доступа к source
+// его поля не зависят от класса, в которой он вложен
+        private final E[] array;
+        int currentId = 0;
+
+        public ListIterator(E[] array) {
+            this.array = array;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return currentId < array.length;
+        }
+
+        @Override
+        public E next() {
+            E res = array[currentId];
+            currentId++;
+            return res;
+        }
+    }
+*/
+// understand the difference between static and not static inner classes
+    public class ListIterator implements Iterator {
+
+        int currentId = 0;
+
+        @Override
+        public boolean hasNext() {
+            return currentId < source.length;
+        }
+
+        @Override
+        public T next() {
+            T res = source[currentId];
+            currentId++;
+            return res;
+        }
+    }
+
 }
+/*
+Модификатор static в Java напрямую связан с классом. Если поле или метод статичны, значит они принадлежит классу.
+Исходя из этого, можно обращаться к статическому методу или полю, используя имя класса.
+Static — модификатор, применяемый к полю, блоку, методу или внутреннему классу. Данный модификатор указывает на
+привязку субъекта  к текущему классу.
+При обозначении переменной уровня класса мы указываем на то, что это значение относится к классу.
+Если этого не делать, то значение переменной будет привязываться к объекту, созданному по этому классу.
+Если переменная не статическая, то у каждого нового объекта данного класса будет своё значение этой переменной,
+меняя которое мы меняем его исключительно в одном объекте.
+public class Car {int km;} Тогда в main: Orange car - 100, Blue car - 85
+Ну а если у нас переменная статическая, то это глобальное значение — одно для всех.
+public class Car {static int km;} Тогда тот же код в main: Orange car - 85, Blue car - 85
+
+Статические методы отличаются от обычных тем, что они также привязаны к классу, а не к объекту.
+Важным свойством статического метода является то, что он может обратиться только к статическим переменным/методам.
+
+Статическим классом может быть только внутренний класс.
+По сути статический вложенный класс ничем не отличается от любого другого внутреннего класса за исключением того,
+что его объект не содержит ссылку на создавший его объект внешнего класса.
+Для использования статических методов/переменных/класса нам не нужно создавать объект данного класса.
+ */
