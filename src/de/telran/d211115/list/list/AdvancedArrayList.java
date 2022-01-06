@@ -3,7 +3,7 @@ package de.telran.d211115.list.list; // generify this
 import java.util.Iterator;
 
 // Название интерфейса пишут в конце
-public class AdvancedArrayList<T> implements CustomList<T> {
+public class AdvancedArrayList<T> implements CustomList<T>, Iterable<T> {
     // Чтобы класс применил интерфейс, надо использовать ключевое слово implements
     // это реализация интерфейса!!!
     // Generate -> implement Methods
@@ -123,34 +123,39 @@ public class AdvancedArrayList<T> implements CustomList<T> {
         }
         return sb.toString();
     }
-
+/*
     @Override
     public Iterator<T> getIterator() {
         return new ListIterator(); // наследование определенности <T> становится <E>. Mы перебираем source.
     }
-/*
-    private static class ListIterator<E> implements Iterator<E> { // нужен вложенный класс т.к. нет доступа к source
-// его поля не зависят от класса, в которой он вложен
-        private final E[] array;
-        int currentId = 0;
-
-        public ListIterator(E[] array) {
-            this.array = array;
-        }
-
-        @Override
-        public boolean hasNext() {
-            return currentId < array.length;
-        }
-
-        @Override
-        public E next() {
-            E res = array[currentId];
-            currentId++;
-            return res;
-        }
-    }
 */
+    @Override
+    public Iterator<T> iterator() {
+        return new ListIterator();
+    }
+    /*
+        private static class ListIterator<E> implements Iterator<E> { // нужен вложенный класс т.к. нет доступа к source
+    // его поля не зависят от класса, в которой он вложен
+            private final E[] array;
+            int currentId = 0;
+
+            public ListIterator(E[] array) {
+                this.array = array;
+            }
+
+            @Override
+            public boolean hasNext() {
+                return currentId < array.length;
+            }
+
+            @Override
+            public E next() {
+                E res = array[currentId];
+                currentId++;
+                return res;
+            }
+        }
+    */
 // understand the difference between static and not static inner classes
     public class ListIterator implements Iterator {
 
@@ -190,4 +195,10 @@ public class Car {static int km;} Тогда тот же код в main: Orange 
 По сути статический вложенный класс ничем не отличается от любого другого внутреннего класса за исключением того,
 что его объект не содержит ссылку на создавший его объект внешнего класса.
 Для использования статических методов/переменных/класса нам не нужно создавать объект данного класса.
+
+Интерфейсом Iterable реализуют классы, объекты которых можно перебрать. Содержит единственный метод iterator.
+Метод, который возвращает iterator и он должен перебирать коллекцию по элементам в естественном порядке.
+(у нас он был getiterator (мы поправили код, поменяли название и в тестах тоже) и теперь
+CustomList<T> extends Iterable<T>, чтоб все наследники CustomList<T> его наследовали)
+
  */

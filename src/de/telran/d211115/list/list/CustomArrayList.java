@@ -61,8 +61,8 @@ public class CustomArrayList<T> implements CustomList<T> { // CustomArrayList<T>
 
     @Override
     public boolean removeByValue(T value) {
-        for (int i = 0; i < source.length; i++) {
-            source[i].equals(value);
+        for (int i = 0; i < size; i++) {
+            if (source[i].equals(value)) ;
             removeById(i);
             return true;
         }
@@ -124,23 +124,23 @@ public class CustomArrayList<T> implements CustomList<T> { // CustomArrayList<T>
 
     @Override
 
-    public Iterator<T> getIterator() {
-        return new ListIterator();
+    public Iterator<T> iterator() {
+        return new BasicIterator();
     }
 
-    public class ListIterator implements Iterator {
+    private class BasicIterator implements Iterator<T> { // Т наследуется из класса в котором basic iterator
 
-        int currentId = 0;
+        private int currentIndex = 0; // нужно поле
 
         @Override
-        public boolean hasNext() {
-            return currentId < size;
+        public boolean hasNext() { // пока выполняется условие, работает Итератор
+            return currentIndex < size;
         }
 
         @Override
         public T next() {
-            T res = source[currentId];
-            currentId++;
+            T res = source[currentIndex];
+            currentIndex++;
             return res;
         }
     }

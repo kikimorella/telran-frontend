@@ -62,17 +62,22 @@ public class ListMain {
 
         // new way to iterate.
         // У каждого Листа есть Iterator, и все данные, которые нужно перебрать находятся внутри
-        Iterator<Integer> iterator = arrayList.getIterator();
+//        Iterator<Integer> iterator = arrayList.getIterator();
+        Iterator<Integer> iterator = arrayList.iterator();
         while (iterator.hasNext()) {
             int number = iterator.next();
+            System.out.println(number);
         }
         // Итератор прогнать можно только 1 раз, потом он сбрасывается на начало,
         // если мы хотим перебрать ещё раз мы создаём новый объект итератор
 
-        // обычно вложенный класс private, а не public
-        AdvancedArrayList<Integer> aList = new AdvancedArrayList<>(0);
-        AdvancedArrayList.ListIterator iterator1 = aList.new ListIterator();
+        // все классы, которые помечены iterable можно применить синтаксис forEach
+        for (int number : arrayList) {
+            System.out.println(number);
+        }
+        
     }
 // эта ссылка CustomList list указывает, что в этом объекте есть методы, которые описаны в интерфейсе, а реализованы
 // в AdvancedArrayList. Тут нам важно, что они делают, но не важно как.
 }
+// TODO найти информацию о структурах данных Очередь и Стэк. на занятии мы будем имплементировать эти структуры данных

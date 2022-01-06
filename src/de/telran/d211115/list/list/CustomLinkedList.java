@@ -207,7 +207,7 @@ public class CustomLinkedList<T> implements CustomList<T> {
     }
 
     @Override // чтоб перебрать Лист нужна только ссылка на первый узел!
-    public Iterator<T> getIterator() {
+    public Iterator<T> iterator() {
         return new ListIterator<>(first);
     }
 
@@ -228,9 +228,11 @@ public class CustomLinkedList<T> implements CustomList<T> {
 
         @Override
         public E next() {
-            current = current.next;
+            E res = current.value;
 
-            return current.value;
+            current = current.next; // если только эта запись, то вернём без нулевого элемента
+
+            return res;
         }
     }
 }

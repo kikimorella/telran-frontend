@@ -6,8 +6,10 @@ import java.util.Iterator;
  * The insterface describes a data structure called List. It is a ordered data structure.
  */
 // public interface CustomList // override toString for all inherited classes
-public interface CustomList<T> { // все методы в interface - public. Важно - описание чем мы будем пользоваться
+public interface CustomList<T> extends Iterable<T> { // все методы в interface - public.
+    // Важно - описание чем мы будем пользоваться
     // Описания должны быть! Подробными! Тот, кто будет читать должен понял. (добавляем /** перед public)
+    // чтоб создать тесты на все виды листов, тесты нужно создавать отсюда
 
     /**
      * The method swaps the value on the index position
@@ -54,7 +56,7 @@ public interface CustomList<T> { // все методы в interface - public. �
      * @return true if element exists and removed, false otherwise
      * @throws CustomOutOfBoundsException if index < 0 or >= size
      */
-    public boolean removeByValue (T value); // вырезать элемент по значению. {10, 15, 10, 7} -> {15, 10, 7}
+    public boolean removeByValue(T value); // вырезать элемент по значению. {10, 15, 10, 7} -> {15, 10, 7}
 
     /**
      * Add an element to the end of the list
@@ -76,12 +78,13 @@ public interface CustomList<T> { // все методы в interface - public. �
      * prints the element out to the console (one by one)
      */
     public void println();
-
-    /**
-     * The method must return an iterator, which iterates the list from the most left element (first) to the
-     * @return
-     */
-    Iterator<T> getIterator();
+// теперь нам это не нужно
+//    /**
+//     * The method must return an iterator, which iterates the list from the most left element (first) to the
+//     *
+//     * @return
+//     */
+//    Iterator<T> getIterator();
 
 }
 /*

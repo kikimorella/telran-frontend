@@ -1,6 +1,6 @@
 package de.telran.d211115.list.list;
+// когда мы пишем тесты, они годны для всех листов
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Iterator;
@@ -8,18 +8,11 @@ import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CustomLinkedListTest extends CustomListTest {
-
-    @BeforeEach // пишем аннотацию. BeforeEach - этот код выполняется перед любым тестом
-    public void init() {
-        intList = new CustomLinkedList<>(); // инстанциируем наши поля
-        stringList = new CustomLinkedList<>();
-    }
-}
-/* теперь мы тесты создали в CustomListTest
-
-    CustomList<Integer> intList = new CustomLinkedList<>();
-    CustomList<String> stringList = new CustomLinkedList<>();
+abstract class CustomListTest { // Важно: Класс abstract. ОП для тестов. Все общие тесты пишем тут.
+    CustomList<Integer> intList; // объявляем переменные
+    CustomList<String> stringList; // а истанцинируем не тут
+    // если нужны индивидуальные тесты, то мы их уже пишем в нужной вкладке
+    //при запуске теста, спросит, какого потомкка тестировать или всех сразу
 
     @Test
     public void testAddSize_threeNumbers() {
@@ -253,16 +246,16 @@ class CustomLinkedListTest extends CustomListTest {
         assertEquals(4, intList.size());
     }
 
-   //write tests for list of strings
-   @Test
-   public void testAddSize_fourStrings() {
-       stringList.add("If you always try your best");
-       stringList.add("Then you’ll never have to wonder");
-       stringList.add("About what you could have done");
-       stringList.add("If you’d summoned all your thunder.");
+    //write tests for list of strings
+    @Test
+    public void testAddSize_fourStrings() {
+        stringList.add("If you always try your best");
+        stringList.add("Then you’ll never have to wonder");
+        stringList.add("About what you could have done");
+        stringList.add("If you’d summoned all your thunder.");
 
-       assertEquals(4, stringList.size());
-   }
+        assertEquals(4, stringList.size());
+    }
 
     @Test
     public void testAddSize_tenStrings() {
@@ -280,7 +273,7 @@ class CustomLinkedListTest extends CustomListTest {
         assertEquals(10, stringList.size());
     }
 
- //   public void testAddGet_100RandomNumbers() { // unlikely with strings
+    //   public void testAddGet_100RandomNumbers() { // unlikely with strings
 
     @Test
     public void testContains_string_true() {
@@ -445,21 +438,22 @@ class CustomLinkedListTest extends CustomListTest {
     }
 
     @Test
-    public  void testIterator_severalElements() {
-        intList.add(10);
+    public void testIterator_severalElements() {
+        intList.add(10); // сначала заполним лист элементами
         intList.add(15);
         intList.add(7);
-        intList.add(28);
+        intList.add(20);
         intList.add(12);
 
-        int[] expected = {};
+        int[] expected = {10, 15, 7, 20, 12}; // создаем массив, который состоит из этих элементов, в том же порядке
 
-        Iterator<Integer> iterator = intList.getIterator();
+        Iterator<Integer> iterator = intList.iterator(); // берем итератор и пользуемся правилом использования Итератора
 
         int i = 0;
-         while (iterator.hasNext()){
-             assertEquals();
-         }
+        while (iterator.hasNext()) { // мы проверили све элементы
+            assertEquals(expected[i], iterator.next());
+            i++;
+        }
+        assertEquals(5, i);
     }
 }
-*/
