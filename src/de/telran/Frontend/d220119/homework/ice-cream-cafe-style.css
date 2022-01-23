@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
+
+body {
+    background-color: rgb(253, 167, 0);
+    background-size: cover;
+    background-image: none;
+}
+
+wrapper {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+img {   
+    position: relative;
+    top: 100px; 
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 80%;
+}
+
+.text-block {
+    position: absolute;
+    display: block;
+    top: 40px;
+    right: 40px;
+
+    width: 410px;
+    background-color: white;
+    padding: 30px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+}
+
+.color-title {
+    color: rgb(253, 167, 0);
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 44px;
+    line-height: 48px;
+}
+
+.description {
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+    margin: 0px;
+}
+
+.link-to-picture {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+    color: black;
+    text-decoration: none;
+}
+
+.my-button {
+    background-color: rgb(253, 167, 0);
+    align-self: flex-end;
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    margin-top: 60px;
+    
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    letter-spacing: 2px;
+    line-height: 28px;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    }
+    
+    .my-button:hover {
+        background-color: rgb(200, 165, 14);
+        color: seashell;
+    }

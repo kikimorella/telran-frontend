@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans&display=swap');
+
+body {
+    background-color: white;
+    font-family: 'Open Sans',sans-serif;
+}
+
+img, .text {
+    padding-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 30px;
+    max-width: 100; 
+    height: auto;
+}
+
+.mini-title {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin: 0px 150px;
+}
+
+.color-title {
+    color: rgb(241, 197, 14);
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    text-transform: uppercase;
+    line-height: 40px;
+    margin: 20px 0px 0px;
+}
+
+.description {
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+    margin-right: 30px;
+    margin-left: 30px;
+    padding-bottom: 30px;
+}
+
+.my-button {
+background-color: rgb(241, 197, 14);
+align-self: flex-end;
+font-size: 16px;
+line-height: 24px;
+padding-bottom: 10px;
+padding-left: 30px;
+padding-right: 30px;
+padding-top: 10px;
+margin: 60px 80 px;
+
+color: white;
+font-family: 'Open Sans', sans-serif;
+text-align: center;
+letter-spacing: 2px;
+line-height: 25px;
+text-transform: uppercase;
+text-decoration: none;
+}
+
+.my-button:hover {
+	background-color: rgb(200, 165, 14);
+    color: seashell;
+}
