@@ -1,0 +1,64 @@
+@media print {  
+    header, footer {
+        display: none;
+    }
+
+    .energy-color, .onkel, .lemon, .pizza {
+        background-color: blanchedalmond;
+        background-blend-mode: soft-light;
+        height: 600px;
+        padding: 0;
+        margin: 0;
+    }
+        
+    body {
+        font-size: 10pt;
+        margin: 0;
+        color: #000;
+        background-color: #fff;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    @page { 
+        margin: 20mm 10mm 20mm 20mm;
+    } 
+
+    header {
+        margin: 0;
+        padding: 0;
+    }
+
+}
+
+@media (max-width: 600px) { 
+    .energy-color, .onkel, .lemon, .pizza {
+        background-color: blanchedalmond;
+        background-blend-mode: soft-light;
+    }
+
+    header, footer {
+        display: none;
+    }
+
+    body {
+     font-family: Arial, sans-serif; 
+     font-size: 1.5rem; 
+     color: black;
+    }
+
+    .energy-color_title, .energy-color_title__blue, .mini-title, title {
+        font-family: Arial, sans-serif; 
+        font-size: 1.5rem; 
+        padding: 0;
+        margin: 0;
+    }
+    
+    .energy-color_description, .content, .button{
+     margin: 1rem;
+     padding: 0;
+     letter-spacing: normal;
+    font-weight: 500px;
+    }
+
+
+}

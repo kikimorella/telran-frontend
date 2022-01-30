@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap');
+
+body {
+    background-image: url('https://pixabay.com/photos/wheat-wheat-crops-barley-crops-1845835/');
+}
+
+h1, h2 {
+    font-family: 'Sunflower', sans-serif;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+aside {
+    width: 20%;
+    background-color: #FFFACD;
+    border: 2px #FFDAB9 ridge;
+    border-radius: 10px; 
+    font-family: 'Sunflower', sans-serif;
+    margin-right: 2vw;
+    margin-bottom: 2vh;
+}
+
+ul {
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    color: slateblue;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    background-color: slateblue;
+    border-radius: 10px;
+}
+
+article {
+    width: 70%;
+    background-color: #FAFAD2;
+    border: 2px #4682B4 ridge;
+    border-radius: 10px; 
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+p {
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.5rem;
+    padding: 1vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+img {
+    width: 30%;
+    border: 2px #F0E68C solid;
+    border-radius: 10px; 
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.left {
+float: left;
+}
+
+.right {
+float: right;
+}
+
+footer {
+	clear:both;
+
+    background-color: #FFFFE0;
+    border: 2px #FFD700 ridge;
+    height: 5vh;
+    width: 94vw;
+
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+
+    font-family: 'Sunflower', sans-serif;
+}
