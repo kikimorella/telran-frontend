@@ -1,0 +1,36 @@
+@media print {
+
+    @page {
+        margin: 2.5cm; /* отступы при печати*/
+    }
+
+    body {
+        margin: 25mm;
+    }
+
+    p{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 16pt; /* 1.6rem, при работе с принтером и бумагой лучше использовать pt*/
+    }
+
+    img {
+        /*width: 100px;*/
+        display: none; /* если фото не нужны при печать */
+    }
+
+    header, aside, footer {
+        display: none;
+    }
+}
+
+@media (max-width:600px) { /* если не нужно на смартфоне*/
+/*    
+    header, aside, footer {
+        display: none;
+    }
+*/
+    .left, 
+    .right {
+        float: none;
+    }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div { /* box сильнее div*/
+            background-color: orange;
+            height: 100px; /* если хотим разлепить и сделать квадраты из box*/
+            width: 100px;
+            margin: 1rem;
+            float: left;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <!--div.box*4-->
+    <div class="box box-1"></div>
+    <div class="box box-2"></div>
+    <div class="box box-3"></div>
+    <div class="box box-4 right"></div>
+
+    <p class="clear"></p> <!-- на этом этапе обрезаются, если ниже есть float элемен clear both убирает это свойство, чтоб не "потек" float -->
+
+    <h2>Остановитесь</h2>
+
+    <!--p*5>lorem-->
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit, laboriosam perspiciatis? Nulla id dolorum, fuga, saepe a laudantium mollitia corrupti, nobis soluta nam facere eligendi fugiat sunt? Porro, minima perferendis?</p>
+    <p>Laudantium esse natus quibusdam perspiciatis dolorum autem at, expedita non ex maxime aspernatur similique omnis ipsum tempora, consequatur quaerat vel? Molestiae architecto dicta tempora, molestias totam unde facere illo id.</p>
+    <p>Cumque perferendis eveniet distinctio earum repellat officiis perspiciatis, corporis corrupti voluptatibus odit impedit nobis, non odio error obcaecati quae quibusdam sint? Eum impedit perspiciatis consequuntur. Nam perferendis voluptas quo esse.</p>
+    <p>Quis eveniet necessitatibus distinctio ipsa. Minus, aspernatur corporis? Praesentium quasi fuga ad animi vel aliquid assumenda? Voluptatem cumque doloribus consectetur repellat, quasi assumenda fugiat excepturi? At aut ipsa optio placeat!</p>
+    <p>Placeat natus esse dolore quam, dolores commodi nesciunt exercitationem! Facere fugit tempore quam? A provident vitae nostrum nam? Doloribus veritatis quod porro dignissimos, ut accusantium quibusdam inventore voluptate consequuntur. Nam.</p>
+
+</body>
+</html>
