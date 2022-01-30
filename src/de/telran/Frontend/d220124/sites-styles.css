@@ -1,0 +1,229 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 2rem;
+    font-family: "Oswald", sans-serif;
+    font-weight: 300;
+}
+
+/* Шапка */
+
+.header {
+    /* min-height: 5rem; - можно теперь убрать, т.к. появились внутренние отступы*/
+    font-family: "Open Sans", sans-serif;
+}
+
+nav ul {
+    text-align: right;
+    font-size: 2.5rem;
+    font-weight: 500;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    /* padding: 1rem 0; - то же самое, экономия места */
+}
+
+nav li {
+    list-style-type: none;
+    display: inline; /* теперь перечисление не блочное */
+    margin-left: 2rem; /* можно и через padding, но лучше margin */
+    margin-right: 2rem; /* xчтоб 6 не прилипал*/
+    /* background-color: beige; */
+}
+
+/* Клякса */
+
+.energy-color {
+    background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/cc54848d24ec5cb1be8c9d83/874-min.jpg);
+    background-position: right top;
+    background-size: cover;
+    padding: 100px 0 100px 100px;
+}
+  
+.energy-color_title {
+    font-size: 36px;
+    color: #111;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    line-height: 130%;
+    font-weight: 200;
+    margin-bottom: 20px;
+}
+  
+.energy-color_title__blue {
+    display: block;
+    color: #179bd6;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-size: 150px;
+    text-transform: uppercase;
+    line-height: 130%;
+}
+  
+.energy-color_description {
+    font-family: "Open Sans", sans-serif;
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 1px;
+    margin-bottom: 3rem;
+    width: 50%;
+}
+  
+.energy-color_description a {
+    font-style: normal;
+    text-decoration: none;
+}
+  
+.energy-color_description .my-lovely-button {
+    color: #fff;
+    background-color: #179bd6;
+    text-transform: uppercase;
+    font-family: "Open Sans", sans-serif;
+    padding: 10px 30px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+/* onkel */
+
+.section { /* чтоб видеть элемент, с которым работаем */
+height: 80vh;
+}
+
+.onkel {
+    background-image: url("https://images03.nicepage.com/c461c07a441a5d220e8feb1a/cdf7444d030e541f8dbca0fc/16951-min.jpg");
+    background-position: 0 50%;
+    background-repeat: no-repeat; /* теперь дядька не повторяется */
+    background-size: contain;
+    background-color: #f2f2f2;
+
+    padding-top: 10%;
+    padding-left: 60%;
+    padding-right: 15%;
+}
+
+.onkel .mini-title {
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.5rem; /* 5px */
+}
+
+.onkel .title {
+    text-transform: uppercase;
+    color: #3870bb;
+    font-size: 3.75rem;
+    letter-spacing: normal;
+    font-weight: 700;
+    font-family: "Roboto Condensed", sans-serif;
+    margin-bottom: 30px;
+}
+
+.onkel .content {
+    font-size: 1.125;
+    line-height: 130%;
+    margin-bottom: 25px;
+}
+
+.onkel .source {
+    margin-bottom: 50px;
+}
+
+.onkel .source a {
+    color: black;
+}
+
+.onkel .button {
+    padding: 10px 50px;
+    background-color: #333333;
+    color: white;
+    text-transform: uppercase;
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Lemon */
+
+.lemon {
+    background-image: url("https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/060307c9979a596fa8c3a36d/pexelsphoto2208836.jpeg");
+    background-position: right top;
+    background-size: 50%;
+    background-repeat: no-repeat;
+
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    padding-top: 15%;
+    padding-bottom: 10px;
+    padding-left: 10%;
+    padding-right: 60%;
+}
+
+/* Pizza */
+
+.pizza {
+    background-image: url("https://images03.nicepage.com/c461c07a441a5d220e8feb1a/e5e1daf96a4558d495356b37/2777964d-min.jpg");
+    background-size: cover;
+    /* background-position: 50% 50%; */ 
+    background-position: center;
+
+    padding: 20px 10%;
+}
+
+.pizza .title {
+    font-family: "Oswald", sans-serif;
+    font-size: 4rem;
+    color: rgb(219, 84, 90);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.pizza > h1 > span {
+    display: block; /* span - универсальный строчный элемент */
+}
+
+.pizza .dorder {
+    border-bottom: 10px solid rgb(219, 84, 90);
+    width: 10ch;
+    margin-bottom: 25px; /* после полоски отступ */
+}
+
+/* icecream */
+
+.icecream {
+    background-image: url("https://images03.nicepage.com/c461c07a441a5d220e8feb1a/d53c730b69465a7aa2b026a4/stack-ice-cream-scoops-cone_23-2148150207.jpg");
+    background-size: contain;
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    background-color: orangered;
+    padding: 8%; /* не корректно, но работает */
+    padding-left: 50%;
+}
+
+.icecream .wrapper {
+    background-color: white;
+    width: 400px;
+    padding: 30px;
+}
+
+/* footer */
+
+.footer {
+    background-color: #333333;
+    color: white;
+    height: 10rem;
+    border-radius: 0 0 2rem 2rem;
+}
+
+.footer > p { /* для детей footer*/
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    padding-top: 3rem;
+}
