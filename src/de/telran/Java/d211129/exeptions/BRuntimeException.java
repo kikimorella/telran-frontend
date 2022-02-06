@@ -1,4 +1,0 @@
-package de.telran.d211129.exeptions;
-
-public class BRuntimeException extends RuntimeException{
-}
