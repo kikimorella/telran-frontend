@@ -1,0 +1,11 @@
+nav {
+    flex-direction: column;
+    height: 80vh; /* высота viev port*/
+    align-items: center;
+    justify-content: flex-end; /* работает на все контейнеры*/
+}
+
+.logout {
+    align-self: start;
+    /*justify-self: center; /*работает-меняет на себя, не меняется, т.к. выше подняться не может, т.к. column*/
+}
