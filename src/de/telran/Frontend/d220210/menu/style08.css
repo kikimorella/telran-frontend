@@ -1,0 +1,22 @@
+/* Возможность влиять на элементы, при наличии места.
+flex grow
+flex schrink
+flex basis
+*/
+
+.shop {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 0;
+}
+
+.search {
+    flex: 1 5 0; 
+    /*flex-grow: 1;
+    flex-shrink: 5;
+    flex-basis: 0;*/
+}
+
+.contact {
+    flex: 2 5 0; /* жадность перебивает */
+}

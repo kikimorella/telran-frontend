@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            min-height: 100px;
+            border: gold 2px solid;
+            /* margin: 5px; /* во флексах margin складываются, чтоб этого избежать используют gap*/
+        }
+
+        section {
+            display: flex;
+            /* расположение в рядок */
+            flex-direction: row;
+            /* есть главное направление и поперечное*/
+            /* flex-direction: column; /* поменяли вид на колонку */
+            /* flex-direction: row-reverse; /* поменяли направление текста */
+            flex-wrap: wrap;
+            gap: 5px;
+            /* айтем двигается, т.е. перенос */
+        }
+
+        .one {
+            /* изначально порядок с номером 1, если нужно поменять, то по очереди*/
+            order: 4;
+        }
+
+        .two {
+            order: 3;
+        }
+
+        .three {
+            order: 1;
+        }
+
+        .four {
+            order: -1;
+        }
+
+        nav {
+            border: gold 2px solid;
+        }
+
+        ul {
+            display: flex;
+            gap: 5px;
+            justify-content: space-evenly;
+            /* между блоками и рамкой одинаковое расстояние */
+            /*justify-content: space-between; /* 90% лепит 1 и последний элемент к краю, всё остальное между*/
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        li {
+            list-style: none;
+            /* убрать точки */
+            display: block;
+            /* по умолчанию */
+            background-color: beige;
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>Шапка</header> <!-- на положение сайта в поисковике влияет запрос. можно использовать "подберите ключевые слова" и указывать их в meta, чтоб повлиять (СЕО и СМО - в Германии это не актуально, в РФ туда лучше не лезть, там злые люди) -->
+
+    <nav>
+        <!-- лучше, чтоб их было 5-7 -->
+        <ul>
+            <li>Пластиковые окна</li> <!-- Карта сайта не нужно. 1 самое важное, что прогаем за 2 сек увидели-->
+            <li>Деревянные окна</li> <!-- предлагаем варианты -->
+            <li>Двери (межкомнатные)</li>
+            <li>Фурнитура</li>
+            <li>Остекление балконов</li> <!-- дополнительные услуги -->
+            <li>Конфигуратор</li> <!-- желательно с доставкой и монтажём -->
+        </ul>
+    </nav>
+
+    <section>
+        <div class="one">Первая колонка</div>
+        <div class="two">Вторая колонка</div>
+        <div class="three">Третья колонка</div>
+        <div class="four">Четвертая колонка</div>
+    </section>
+
+    <footer>
+        <nav>
+            <!-- не приносящие деньги ссылки -->
+            <ul>
+                <li>Главная</li>
+                <li>Карта сайта</li>
+                <li>Вопросы</li>
+                <li>О нас</li>
+                <li>Конфигуратор</li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>

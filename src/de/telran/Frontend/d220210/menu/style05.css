@@ -1,0 +1,21 @@
+nav { /*центрирование всех элементов внутри контейнера по центру (главная и второстепенная оси)*/
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact {
+    align-self: start;
+}
+
+.home {
+    align-self: end;
+}
+
+.shop {
+    align-self: flex-end;
+}
+
+.logout {
+    align-self: stretch; /* растянулся по длинне родителя*/
+}
