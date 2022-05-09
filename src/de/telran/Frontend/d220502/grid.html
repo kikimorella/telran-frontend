@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon"
+        href="https://hofstetter-melk.ch/wp-content/uploads/2020/11/png-clipart-computer-icons-person-user-spark-icon-people-share-icon-thumbnail.png"
+        type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Home - Grid</title>
+</head>
+
+<body>
+    <header>
+        <ul class="nav_list">
+            <li class="nav_list_item">
+                <a href="./index.html">Home</a>
+            </li>
+            <li class="nav_list_item">
+                <a href="./flex.html">Flex</a>
+            </li>
+            <li class="nav_list_item">
+                <a href="#" class="nav_list_item_active">Grid</a>
+            </li>
+            <li class="nav_list_item">
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </header>
+
+    <div class="main_content">
+        <article class="main_article main_article_1">
+            <h3 class="main_article_head">
+                Definition
+            </h3>
+            <p class="main_article_text">
+                In Cascading Style Sheets, <b>CSS grid layout</b>  or <b>CSS grid</b> creates complex responsive web design grid layouts more easily and consistently across browsers. Historically, there have been other methods for controlling web page layout methods, such as tables, floats, and more recently, CSS Flexible Box Layout (Flexbox). CSS grid is currently not an official standard (it is a W3C Candidate Recommendation) although it has been adopted by the recent versions of all current major browsers.
+            </p>
+        </article>
+        <article class="main_article main_article_2">
+            <h3 class="main_article_head">
+                Motivation
+            </h3>
+            <p class="main_article_text">
+                CSS grid can create more robust and flexible layouts than the previous options like CSS floats. It also allows for more standardized code that works across browsers. This is in contrast to relying on specific browser hacks or complicated workarounds. <br>
+                One issue with exploiting floats in CSS is that if content gets added to one portion of the page it could disrupt the flow of the page and break the layout. This is due to the varying heights for layout elements.[2] Though CSS flex box supports flexible layouts and provides the flexibility of creating complex layouts, it fails when the need for creating responsive layouts in 2-dimensional space arises.
+            </p>
+        </article>
+        <article class="main_article main_article_3">
+            <h3 class="main_article_head">
+                History
+            </h3>
+            <p class="main_article_text">
+                The first comprehensive draft of a grid layout for CSS was created by Phil Cupp at Microsoft in 2011 and implemented in Internet Explorer 10 behind a -ms- vendor prefix. The syntax was restructured and further refined through several interations in the CSS Working Group, led primarily by Elika Etemad and Tab Atkins Jr. The feature was widely adopted by web developers after evangelism led primarily by Rachel Andrew and Jen Simmons. <br>
+                As of October 2017, Chrome, Firefox, Safari and Edge all support CSS grid without vendor prefixes. IE 10 and 11 support CSS grid but with an outdated specification. On mobile, all modern browsers support CSS grid except for Opera Mini and Baidu Browser. Web developers targeting older browsers can utilize Modernizr 3.5.0 to detect and gracefully degrade the webpage as needed.
+            </p>
+        </article>
+    </div>
+
+        <img src="./css/Holy grail layout.jpg" width="80%" display="block" alt="The following is an example of the 'Holy grail' layout">
+
+    <footer>
+        <p>
+            @Telran
+            <br>
+            All rights reserver
+            <br>
+            Berlin 2022
+        </p>
+    </footer>
+</body>
+
+</html>
