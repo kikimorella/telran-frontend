@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/47f1ee6b76.js"
+        crossorigin="anonymous"></script>
     <link rel="shortcut icon"
         href="https://hofstetter-melk.ch/wp-content/uploads/2020/11/png-clipart-computer-icons-person-user-spark-icon-people-share-icon-thumbnail.png"
         type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
+
     <title>Home - Grid</title>
 </head>
 
@@ -27,8 +30,20 @@
             <li class="nav_list_item">
                 <a href="#">Contact</a>
             </li>
+            <li class="nav_list_item toggle">
+                <div class="toggle_switch">
+                    <input type="checkbox" class="checkbox" id="chk" />
+                    <label for="chk" class="label">
+                        <i class="fa-solid fa-ghost"></i>
+                        <i class="fas fa-sun"></i>
+                        <div class="ball"></div>
+                    </label>
+                </div>
+            </li>
         </ul>
     </header>
+
+    <script src="./script/index.js"></script>
 
     <div class="main_content">
         <article class="main_article main_article_1">
@@ -36,7 +51,15 @@
                 Definition
             </h3>
             <p class="main_article_text">
-                In Cascading Style Sheets, <b>CSS grid layout</b>  or <b>CSS grid</b> creates complex responsive web design grid layouts more easily and consistently across browsers. Historically, there have been other methods for controlling web page layout methods, such as tables, floats, and more recently, CSS Flexible Box Layout (Flexbox). CSS grid is currently not an official standard (it is a W3C Candidate Recommendation) although it has been adopted by the recent versions of all current major browsers.
+                In Cascading Style Sheets, <b>CSS grid layout</b> or <b>CSS
+                    grid</b> creates complex responsive web design grid layouts
+                more easily and consistently across browsers. Historically,
+                there have been other methods for controlling web page layout
+                methods, such as tables, floats, and more recently, CSS Flexible
+                Box Layout (Flexbox). CSS grid is currently not an official
+                standard (it is a W3C Candidate Recommendation) although it has
+                been adopted by the recent versions of all current major
+                browsers.
             </p>
         </article>
         <article class="main_article main_article_2">
@@ -44,8 +67,18 @@
                 Motivation
             </h3>
             <p class="main_article_text">
-                CSS grid can create more robust and flexible layouts than the previous options like CSS floats. It also allows for more standardized code that works across browsers. This is in contrast to relying on specific browser hacks or complicated workarounds. <br>
-                One issue with exploiting floats in CSS is that if content gets added to one portion of the page it could disrupt the flow of the page and break the layout. This is due to the varying heights for layout elements.[2] Though CSS flex box supports flexible layouts and provides the flexibility of creating complex layouts, it fails when the need for creating responsive layouts in 2-dimensional space arises.
+                CSS grid can create more robust and flexible layouts than the
+                previous options like CSS floats. It also allows for more
+                standardized code that works across browsers. This is in
+                contrast to relying on specific browser hacks or complicated
+                workarounds. <br>
+                One issue with exploiting floats in CSS is that if content gets
+                added to one portion of the page it could disrupt the flow of
+                the page and break the layout. This is due to the varying
+                heights for layout elements.[2] Though CSS flex box supports
+                flexible layouts and provides the flexibility of creating
+                complex layouts, it fails when the need for creating responsive
+                layouts in 2-dimensional space arises.
             </p>
         </article>
         <article class="main_article main_article_3">
@@ -53,8 +86,21 @@
                 History
             </h3>
             <p class="main_article_text">
-                The first comprehensive draft of a grid layout for CSS was created by Phil Cupp at Microsoft in 2011 and implemented in Internet Explorer 10 behind a -ms- vendor prefix. The syntax was restructured and further refined through several interations in the CSS Working Group, led primarily by Elika Etemad and Tab Atkins Jr. The feature was widely adopted by web developers after evangelism led primarily by Rachel Andrew and Jen Simmons. <br>
-                As of October 2017, Chrome, Firefox, Safari and Edge all support CSS grid without vendor prefixes. IE 10 and 11 support CSS grid but with an outdated specification. On mobile, all modern browsers support CSS grid except for Opera Mini and Baidu Browser. Web developers targeting older browsers can utilize Modernizr 3.5.0 to detect and gracefully degrade the webpage as needed.
+                The first comprehensive draft of a grid layout for CSS was
+                created by Phil Cupp at Microsoft in 2011 and implemented in
+                Internet Explorer 10 behind a -ms- vendor prefix. The syntax was
+                restructured and further refined through several interations in
+                the CSS Working Group, led primarily by Elika Etemad and Tab
+                Atkins Jr. The feature was widely adopted by web developers
+                after evangelism led primarily by Rachel Andrew and Jen Simmons.
+                <br>
+                As of October 2017, Chrome, Firefox, Safari and Edge all support
+                CSS grid without vendor prefixes. IE 10 and 11 support CSS grid
+                but with an outdated specification. On mobile, all modern
+                browsers support CSS grid except for Opera Mini and Baidu
+                Browser. Web developers targeting older browsers can utilize
+                Modernizr 3.5.0 to detect and gracefully degrade the webpage as
+                needed.
             </p>
         </article>
         <article class="main_article main_article_3">
@@ -62,7 +108,19 @@
                 Article 4
             </h3>
             <p class="main_article_text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ratione incidunt ut, amet dicta provident illo, obcaecati laboriosam nobis iste ipsum voluptate? A totam quae unde qui! Eius ducimus voluptas ab numquam consequuntur repudiandae rerum labore at, laboriosam accusantium inventore quis corporis quas expedita odit similique maiores consectetur itaque nihil molestiae nesciunt dolor consequatur? Molestiae iste commodi, sint magni quae harum beatae error maiores porro, ducimus hic totam blanditiis illum recusandae similique aspernatur tempora facilis repellat eligendi! Non dignissimos culpa sed reiciendis ut distinctio illo, alias quasi totam amet deserunt voluptate ipsa nihil sapiente omnis earum aliquam beatae tempore voluptatum?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Inventore ratione incidunt ut, amet dicta provident illo,
+                obcaecati laboriosam nobis iste ipsum voluptate? A totam quae
+                unde qui! Eius ducimus voluptas ab numquam consequuntur
+                repudiandae rerum labore at, laboriosam accusantium inventore
+                quis corporis quas expedita odit similique maiores consectetur
+                itaque nihil molestiae nesciunt dolor consequatur? Molestiae
+                iste commodi, sint magni quae harum beatae error maiores porro,
+                ducimus hic totam blanditiis illum recusandae similique
+                aspernatur tempora facilis repellat eligendi! Non dignissimos
+                culpa sed reiciendis ut distinctio illo, alias quasi totam amet
+                deserunt voluptate ipsa nihil sapiente omnis earum aliquam
+                beatae tempore voluptatum?
             </p>
         </article>
         <article class="main_article main_article_3">
@@ -70,12 +128,47 @@
                 Article 5
             </h3>
             <p class="main_article_text">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis illo recusandae vitae! Placeat quae consequuntur ex impedit nemo qui ut, ab accusantium similique, recusandae illum neque unde dicta aliquam! Quibusdam tempora reprehenderit unde aut dolorum voluptates doloribus hic sint maxime, voluptatem modi reiciendis omnis cumque accusamus aperiam! Aliquam harum in recusandae cum quas quasi dolore, rem sapiente quam? Quis amet molestias fugit? Voluptatem voluptate voluptates esse unde, eveniet excepturi et veniam vitae doloribus ad quae itaque, temporibus eum soluta expedita minus officiis error, alias nihil incidunt ipsam? Fugiat earum, ipsum rerum commodi repellat ab animi veniam odit nesciunt tenetur voluptates assumenda accusantium tempora obcaecati iusto, repudiandae, deleniti architecto libero itaque nulla incidunt doloremque pariatur. Beatae itaque ab alias doloremque perspiciatis quae quia laudantium repellat. Hic, quaerat consequatur. Quas nesciunt, recusandae expedita corporis quia voluptatum veniam sunt iure debitis, repellendus reprehenderit a libero facere ipsa non incidunt aliquid voluptatibus provident nam. Repellendus molestias esse facere dicta inventore a eligendi illum veniam ratione nesciunt sint voluptates ipsa, nihil doloremque ad! Delectus reiciendis facere placeat eligendi ad dolores voluptates nisi doloribus harum porro nostrum aperiam vel, sit eos minus dignissimos velit repellat molestiae fuga odio voluptatibus fugit quos quae sequi. Molestias, ratione nam.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Officiis illo recusandae vitae! Placeat quae consequuntur ex
+                impedit nemo qui ut, ab accusantium similique, recusandae illum
+                neque unde dicta aliquam! Quibusdam tempora reprehenderit unde
+                aut dolorum voluptates doloribus hic sint maxime, voluptatem
+                modi reiciendis omnis cumque accusamus aperiam! Aliquam harum in
+                recusandae cum quas quasi dolore, rem sapiente quam? Quis amet
+                molestias fugit? Voluptatem voluptate voluptates esse unde,
+                eveniet excepturi et veniam vitae doloribus ad quae itaque,
+                temporibus eum soluta expedita minus officiis error, alias nihil
+                incidunt ipsam? Fugiat earum, ipsum rerum commodi repellat ab
+                animi veniam odit nesciunt tenetur voluptates assumenda
+                accusantium tempora obcaecati iusto, repudiandae, deleniti
+                architecto libero itaque nulla incidunt doloremque pariatur.
+                Beatae itaque ab alias doloremque perspiciatis quae quia
+                laudantium repellat. Hic, quaerat consequatur. Quas nesciunt,
+                recusandae expedita corporis quia voluptatum veniam sunt iure
+                debitis, repellendus reprehenderit a libero facere ipsa non
+                incidunt aliquid voluptatibus provident nam. Repellendus
+                molestias esse facere dicta inventore a eligendi illum veniam
+                ratione nesciunt sint voluptates ipsa, nihil doloremque ad!
+                Delectus reiciendis facere placeat eligendi ad dolores
+                voluptates nisi doloribus harum porro nostrum aperiam vel, sit
+                eos minus dignissimos velit repellat molestiae fuga odio
+                voluptatibus fugit quos quae sequi. Molestias, ratione nam.
             </p>
         </article>
     </div>
 
-        <img src="./css/Holy grail layout.jpg" width="80%" display="block" alt="The following is an example of the 'Holy grail' layout">
+    <img src="./css/Holy grail layout.jpg" width="80%" display="block"
+        alt="The following is an example of the 'Holy grail' layout">
+
+    <div class="contact_container">
+        <h2 class="contact_head" id="contact">Contact with us!</h2>
+        <form id="contact_form" class="form">
+            <input type="email" class="form_input" placeholder="E-mail">
+            <input type="text" class="form_input" placeholder="Name">
+            <textarea class="form_textarea" placeholder="Message"></textarea>
+            <button class="form_button" type="button">Send</button>
+        </form>
+    </div>
 
     <footer>
         <p>
@@ -90,7 +183,6 @@
 
 </html>
 
-<!-- посмотри, что было на занятии -->
 <!--
 
 header {
